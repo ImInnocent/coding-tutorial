@@ -1,3 +1,25 @@
+## 함수
+
+#### 함수의 선언
+
+```javascript
+// 근본 선언
+function myFunction(myParamter) {
+    return "abc"
+}
+
+// 화살표 함수
+const myFunction = (myParamter) => {
+    return "abc"
+} 
+
+// 화살표 함수 (반환 축약형)
+// 중괄호 없이 바로 반환이 가능하다. 단, 여러 줄을 실행해야 할 때에는 축약을 쓰지 않는게 좋다.
+// 때로는 반환을 하지 않는 함수더라도 짧게 쓰기 위해 축약형을 쓰기도 한다.
+const myFunction = (myParameter) => "abc";
+```
+
+
 ## 조건문 (if)
 
 #### 기본적인 if 문법
@@ -29,8 +51,6 @@ if (num > 5) {
 <hr/>
 
 #### 삼항 연산자 (ternary operator)
-
-
 
 ```javascript
 // if-else의 간단한 표현
@@ -73,6 +93,49 @@ if (score >= 90) {
 ## map
 
 #### 배열 요소 변환
+
+기존 배열로부터 가공된 새로운 배열을 반환하는 함수
+
+```javascript
+const data = [1, 2, 3, 4, 5];
+
+const result = data.map((value, index) => {
+    // 각 배열 요소에 대하여 반환.
+    return value * 2;
+})
+
+// 아래 코드와 같음
+// const result = [
+//     (data[0] * 2),
+//     (data[1] * 2),
+//     (data[2] * 2),
+//     (data[3] * 2),
+//     (data[4] * 2),
+// ]
+
+const complexData = [
+    {
+        id: 1,
+        name: "송인호"
+    },
+    {
+        id: 2,
+        name: "홍길동"
+    }
+]
+
+const complexResult = complexData.map((value, index) => {
+    return `기호 ${value.id}번 ${value.name}`;
+})
+
+// 아래 코드와 같음
+// const complexResult = [
+//     `기호 ${complexData[0].id}번 ${complexData[0].name}`,   // 기호 1번 송인호
+//     `기호 ${complexData[1].id}번 ${complexData[1].name}`,   // 기호 2번 홍길동
+// ]
+```
+
+#### 배열 요소 반환
 
 ```javascript
 // 배열의 각 요소를 변환하여 새 배열 생성
