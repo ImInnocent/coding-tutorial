@@ -19,10 +19,10 @@ const data = [{
 }]
 
 const formatString = (address, addressString, userInfo) => {
-    return `${addressString}동네 ${addressString}에 사는, 참가번호 ${userInfo.id}번, ${userInfo.name}`;
+    return `${address}동네 ${addressString}에 사는, 참가번호 ${userInfo.id}번, ${userInfo.name}`;
 }
 
-const printUsers = (year, month, date) => {
+const printUsers = (data) => {
     // formatString을 반드시 사용할 것
     // console.log를 이용하여 함수 내부에서 출력할 것.
     // 작성 영역 /////////////////////////////////////////////
